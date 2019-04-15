@@ -1,0 +1,21 @@
+﻿Name,Sales,Commission Percent,Region,Commission Earned
+Billy Bradshaw,$33611,0.2,North,$6722.20 
+Twanna Beagle,$44250,0.2,East,$8850.00 
+Gloria Saling,$49278,0.2,West,$9855.60 
+Theola Spargo,$75021,0.2,South,$15004.20 
+Giovanni Armas,$59821,0.2,East,$11964.20 
+Cristal Smith,$44597,0.2,West,$8919.40 
+Ashley Morris,$55597,0.2,North,$11119.40 
+Tiffaney Kreps,$40728,0.2,South,$8145.60 
+Arnold Fultz,$49674,0.2,East,$9934.80 
+Sherman Sallee,$23780,0.2,North,$4756.00 
+Shawana Johnson,$58365,0.2,West,$11673.00 
+Kathrine Mosca,$67489,0.2,North,$13497.80 
+Karren Mahmoud,$53382,0.2,East,$10676.40 
+Venus Grasser,$33572,0.2,West,$6714.40 
+Rickey Jones,$28522,0.2,East,$5704.40 
+Verona Strauch,$41865,0.2,North,$8373.00 
+Elvis Yearta,$25314,0.2,South,$5062.80 
+Jonathan Lee,$22823,0.2,West,$4564.60 
+Sommer Cottle,$45660,0.2,East,$9132.00 
+Elsa Laverty,$49386,0.2,North,$9877.20 

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sales Database Analyzer</title>
+    <h1>Sales Database Analyzer</h1>
+    <p>Please select the Employee Sales Database</p>
+
+    <input type="file" id="fileUpload" />
+    <input type="button" id="upload" value="Upload" onclick="Upload()" /> <!--create upload button-->
+    <form>
+            <p>Please select a Region:</p> <!--create region select dropdown-->
+            <select id = "region" onchange="regionSelected()"> 
+                <option value="All">All</option>
+                <option value="North">North</option>
+                <option value="South">South</option>
+                <option value="East">East</option>
+                <option value="West">West</option>
+            </select>
+    
+            <p>Please select an analysis to complete:</p> <!--create analysis select dropdown-->
+            <select id = "analysis" onchange="analysisSelected()">
+                <option value="Total Sales">Total Sales</option>
+                <option value="Average Sales">Average Sales</option>
+                <option value="Total Commission">Total Commission</option>
+                <option value="Average Commission">Average Commission</option>
+            </select>
+            <br><br>
+            <button onclick="performAnalysis()">Perform Analysis</button> <!--create the perform analysis button-->     
+        </form>
+    <hr />
+    <div id="dvCSV"></div>
+
+    <style type="text/css"> /*Create CSS*/
+    
+        body
+        {
+            background-color: lightgray; /*set background color*/
+
+            font-family: Arial;
+            font-size: 10pt; /*set the font to Arial*/
+        }
+        table
+        {
+            border: 1px solid rgb(0, 0, 0);
+            border-collapse: collapse; /*set border color*/
+        }  
+        tr:nth-child(even) {
+            background: rgb(190, 247, 255); /*set the color for the table*/
+        }
+        tr:nth-child(odd){
+            background:rgb(57, 176, 255);
+        }
+        table td
+        {
+            padding: 5px; /*set table padding*/
+        }
+        table{
+            width:50%;
+            border-collapse:collapse; /*set table width*/
+        }
+        table td{
+            padding:5px;
+            border:1px solid black;
+            text-align:left;
+        }
+        .optionsDiv {
+            padding-bottom:10px;
+            font-weight:bold;
+        }
+    </style> <!--close css tags-->
+</head>
+<body>
+<script>
+    function Upload() { //function to upload the csv file
+        var fileUpload = document.getElementById("fileUpload");
+        var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+        if (regex.test(fileUpload.value.toLowerCase())) {
+        if (typeof (FileReader) != "undefined") {
+            var reader = new FileReader(); //create a new FileReader object
+            reader.onload = function (e) { //when the file finishes loading
+            var table = document.createElement("table"); //create table
+            var rows = e.target.result.split("\n");
+        for (var i = 0; i < rows.length; i++) { //make rows
+            var cells = rows[i].split(",");
+        if (cells.length > 1) {
+            var row = table.insertRow(-1);
+        for (var j = 0; j < cells.length; j++) {
+            var cell = row.insertCell(-1);
+            cell.innerHTML = cells[j];
+            }
+        }
+    }
+        var dvCSV = document.getElementById("dvCSV");
+        dvCSV.innerHTML = "";
+        dvCSV.appendChild(table); 
+        }
+        reader.readAsText(fileUpload.files[0]);
+        } else {
+            alert("This browser does not support HTML5."); //sends alert if browser does not support HTML5
+        }
+        } else {
+            alert("Please upload a valid CSV file.");// sends alert if the csv file is not supported
+        }
+    }   
+    function regionSelected(){ //function for the region select dropdown box
+        
+        return document.getElementById("regon").value
+    }
+    function analysisSelected(){ //function for the analysis dropdown box
+        
+        return document.getElementById("analysis").value
+    }
+    function performAnalysis(){ // function for the perform analyais button
+
+    }    
+</script> <!--close script tag-->
+</body>    <!--close body tag-->
+</html> <!--close HTML tag-->
